@@ -6,7 +6,7 @@ The first task is essential, and oft overlooked as an important and difficult qu
 
 The assessment: 
 
-Imagine you find yourself in a post-apocalyptic society, joining a team of rogue ninja engineers that desperately need to keep track of their tasks. However, much of the internet was erased by a nuclear electromagnetic pulse, precluding the use of pre-built components such as react-trello. Frameworks like react.js still exist, and you can use them. Your task is to build a kanban board from scratch: 
+Imagine you find yourself in a post-apocalyptic society, joining a team of rogue ninja engineers that desperately need to keep track of their tasks. However, much of the internet was erased by a nuclear electromagnetic pulse, precluding the use of pre-built components such as react-trello. Frameworks like react.js still exist, and you can use them. So, to be clear, your task is to build a kanban board from scratch. You can use react as a framework, but NOT a library like react-trello. 
 
 1. Use the png provided as a wireframe template, and create a list of 4 boards with 2 default items in each list.
 2. Create the functionality to add a task to each list.
