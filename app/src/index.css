@@ -28,12 +28,17 @@ body {
   color: #7252ff;
 }
 
+*{
+  transition: all 0.2s;
+}
+
 button{
   transform: scale(0.9);
 }
 
 .board-container{
   width: 350px;
+  min-height: 100px;
 }
 
 .kanban-container{
