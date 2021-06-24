@@ -18,3 +18,9 @@ Imagine you find yourself in a post-apocalyptic society, joining a team of rogue
 8. Find a cold drink and revel in how lucky we all are to be alive :)
 
 ===================================================================================================================
+
+# Instructions
+1. Pull the code to your local machine and navigate to the app/ folder
+2. Install dependencies with `yarn - yarn add` or `npm - npm install` 
+3. Run the application with `npm start` or `yarn start`
+
