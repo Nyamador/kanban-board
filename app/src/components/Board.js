@@ -16,6 +16,13 @@ const Board = ({ id, title, tasks }) => {
     }, [newTaskFormOpened]);
 
 
+    useEffect(() => {
+        let localStorageData = JSON.parse(localStorage.getItem('boards'))
+        const boardIndex = localStorageData.findIndex(item => item.id === id)
+        localStorageData[boardIndex] = { id, boardTitle: title, tasks: taskList }
+        localStorage.setItem('boards', JSON.stringify(localStorageData))
+    }, [taskList])
+
     const closeAddCardForm = () => setNewTaskFormOpened(false)
 
     const handleNewTaskAddition = () => {
@@ -62,7 +69,6 @@ const Board = ({ id, title, tasks }) => {
         const droppedItem = e.dataTransfer.getData("drag-item");
         const droppedItemObject = JSON.parse(droppedItem)
 
-        // Check if the items boardid is equal to the currentboard
         if (droppedItem.boardId === id) {
             return
         } else {
@@ -76,9 +82,7 @@ const Board = ({ id, title, tasks }) => {
         <div className="flex flex-col bg-light-gray w-60 px-2 rounded-sm board-container min-h-0 overflow-y scroll" onDrop={e => handleDrop(e)} onDragOver={e => handleDragOver(e)} onDragEnter={e => handleDragEnter(e)} onDragLeave={e => handleDragLeave(e)}>
             <p className="p-2 text-white font-bold">{title}</p>
 
-            {taskList.map((task, index) => <Task boardId={id} id={task.id} key={task.id} dragStart={() => {
-
-            }} drag={() => { }} dragEnd={() => handleDragEnd(index)} name={task.name} />)}
+            {taskList.map((task, index) => <Task boardId={id} id={task.id} key={task.id} dragStart={() => { }} drag={() => { }} dragEnd={() => handleDragEnd(index)} name={task.name} />)}
 
             <div className={`${newTaskFormOpened ? "block" : "hidden"}`}>
                 <div className="bg-dark-gray rounded-md p-2 cursor-pointer">
