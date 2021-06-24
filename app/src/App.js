@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react'
 
 import { Board } from './components'
 import initialState from './initialState'
+import { getItemfromLocalStorage, setLocalStorageItem } from './localStorage'
 
 function KanbanApp() {
 
   const [appData, setAppData] = useState([])
 
   useEffect(() => {
-    let localStorageData = localStorage.getItem('boards')
+    let localStorageData = getItemfromLocalStorage('boards')
 
     if (localStorageData === null) {
-      localStorage.setItem('boards', JSON.stringify(initialState))
+      setLocalStorageItem('boards', initialState)
       setAppData(initialState)
-    } else {
-      const boards = JSON.parse(localStorage.getItem('boards'))
-      setAppData(boards)
     }
+    const boards = getItemfromLocalStorage('boards')
+    setAppData(boards)
   }, [])
 
   return <main className="h-screen bg-dark overflow-hidden overflow-x-scroll">

@@ -1,3 +1,14 @@
+
+/**
+ * 
+ * @param {string} name - name of the task
+ * @param {number} id -  unique identifier of the task
+ * @param {number} boardId - unique identifier of the board of which the task belongs to
+ * @param {function} dragEnd -  called when the task has completed the drag process
+ * 
+ * @returns {Component<props>}
+ */
+
 const Task = ({ name, id, boardId, dragEnd }) => {
 
     const handleDragStart = e => {

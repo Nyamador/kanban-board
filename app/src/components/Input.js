@@ -1,5 +1,12 @@
 import React from 'react';
 
+
+/**
+ * 
+ * @param {object} innerRef - ref for focusing the input element when it's mounted
+ * @returns {Component<props>}
+ */
+
 const Input = ({ innerRef, ...props }) => {
 
     return (
